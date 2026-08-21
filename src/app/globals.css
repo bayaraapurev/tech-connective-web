@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  /* Логоны үндсэн өнгөнүүд */
+  --color-logo-blue: #00aae7;
+  --color-logo-red: #ed1b24;
+  --color-logo-green: #00a651;
+  --color-logo-yellow: #ffcc00;
+  --color-logo-dark: #231f20;
+}
