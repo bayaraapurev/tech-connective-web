@@ -23,7 +23,6 @@ export default function RootLayout({ children }) {
         <meta name="google-site-verification" content="googlea330e799e52e5834" />
 
         {/* Google Analytics скрипт */}
-        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-333RDHZXQZ"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
