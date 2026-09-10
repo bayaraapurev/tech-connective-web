@@ -1,7 +1,8 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer"; // Footer-ийг оруулж ирж байна
+import Footer from "@/components/Footer";
+import Script from "next/script"; // 1. Script-ийг импорт хийх
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700', '900'],
@@ -16,11 +17,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="mn">
-      {/* flex-col болон min-h-screen нэмснээр Footer үргэлж хамгийн доор байна */}
+      {/* 2. Энд <head> хэсгийг нэмж Google скрипт болон meta кодоо байрлуулна */}
+      <head>
+        {/* Google Search Console баталгаажуулах мета код (Хэрэв байгаа бол) */}
+        <meta name="google-site-verification" content="Энд_Таны_Search_Console_Код" />
+
+        {/* Google Analytics скрипт */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-333RDHZXQZ');
+          `}
+        </Script>
+      </head>
+
       <body className={`${roboto.className} antialiased flex flex-col min-h-screen bg-gray-50`}>
         <Navbar />
         
-        {/* Үндсэн контент хэсэг */}
         <main className="flex-grow">
           {children}
         </main>
