@@ -20,21 +20,18 @@ export default function RootLayout({ children }) {
       {/* 2. Энд <head> хэсгийг нэмж Google скрипт болон meta кодоо байрлуулна */}
       <head>
         {/* Google Search Console баталгаажуулах мета код (Хэрэв байгаа бол) */}
-        <meta name="google-site-verification" content="Энд_Таны_Search_Console_Код" />
+        <meta name="google-site-verification" content="googlea330e799e52e5834" />
 
         {/* Google Analytics скрипт */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID"
-        />
-        <Script id="google-analytics">
-          {`
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-333RDHZXQZ"></script>
+        <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
             gtag('config', 'G-333RDHZXQZ');
-          `}
-        </Script>
+        </script>
       </head>
 
       <body className={`${roboto.className} antialiased flex flex-col min-h-screen bg-gray-50`}>
